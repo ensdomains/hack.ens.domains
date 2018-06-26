@@ -100,6 +100,46 @@ const Supported = styled('section')`
     }
   }
 
+  .mentor {
+    text-align: center;
+    width: 50%;
+    margin:20px 0;
+    ${mq.medium`
+      width: 25%;
+    `};
+
+    a{
+      text-decoration: none;
+      &:hover {
+        cursor: pointer;
+        img {
+          box-shadow: 4px 10px 20px 0 rgba(136,149,169,0.75);
+        }
+        
+        p {
+          transition: 0.2s ease-in-out;
+          color: #5284FF;
+        }
+      }  
+    }
+    img {
+      transition: box-shadow 0.3s ease-in-out;
+      border-radius: 50%;
+      box-shadow: 4px 10px 20px 0 rgba(136,149,169,0.30);
+      width: 50%;
+      margin-bottom: 15px;
+    }
+    p {
+      color: #3252C8;
+      font-size: 16px;
+      font-weight: 400;
+      text-transform: capitalize;
+      ${mq.medium`
+        font-size: 20px;
+      `};
+    }
+  }
+
   .app {
     text-align: center;
     text-decoration: none;
@@ -138,6 +178,59 @@ const Supported = styled('section')`
     }
   }
 `
+const mentor_details = {
+  "nicksdjohnson": {
+    "fullName":"Nick Johnson",
+    "org":"ENS",
+    "skillsets":"#ama"
+  },
+  "jarradhope": {
+    "fullName":"JARRAÐ HOPΞ",
+    "org":"status.im",
+    "skillsets":"#mobile"
+  },
+  "jennaszenk": {
+    "fullName":"Jenna Zenk",
+    "org":"Melonport",
+    "skillsets":"#ens, #governance"
+  },
+  "bretsun": {
+    "fullName":"Bret Sun",
+    "org":"Aragon",
+    "skillsets":"#ens, #governance"
+  },
+  "quynhtranthanh": {
+    "fullName":"Quynh Tran",
+    "org":"Crypto Compare",
+    "skillsets":"#coarching"
+  },
+  "matthewgould": {
+    "fullName":"Matthew Gould",
+    "org":"Agent",
+    "skillsets":"#ens"
+  },
+  "graemeblackwood": {
+    "fullName":"Graeme Blackwood",
+    "org":"Agent",
+    "skillsets":"#ux"
+  }
+}
+
+const importMentors = r =>
+  r.keys().map(item => {
+    let fileName = item.replace(/\.(png|jpe?g|svg)$/, '').replace('./', '');
+    let parsed = item
+      .replace(/\.(png|jpe?g|svg)$/, '')
+      .replace(/([A-Z])/g, ' $1')
+      .replace('./', '')
+
+    let obj = {
+      fileName: fileName,
+      name: parsed,
+      src: r(item),
+    }
+    return Object.assign(obj, mentor_details[parsed])
+  })
 
 const importAll = r =>
   r.keys().map(item => {
@@ -160,7 +253,7 @@ const desktop = importAll(
   require.context('./desktop', false, /\.(png|jpe?g|svg)$/)
 )
 
-const mentors = importAll(
+const mentors = importMentors(
   require.context('./mentors', false, /\.(png|jpe?g|svg)$/)
 )
 
@@ -173,6 +266,27 @@ const apps = importAll(require.context('./apps', false, /\.(png|jpe?g|svg)$/))
 const bgImages = importAll(
   require.context('./images', false, /\.(png|jpe?g|svg)$/)
 )
+
+const MentorRow = ({ list, className, children }) => {
+  return (
+    <React.Fragment>
+      {children}
+      <div className={`apps ${className ? className : ''}`}>
+        {list.map(item => (
+          <Mentor
+            key={item.name}
+            src={item.src}
+            name={item.fullName}
+            org={item.org}
+            skillsets={item.skillsets}
+            fileName={item.fileName}
+          />
+        ))}
+      </div>
+    </React.Fragment>
+  )
+}
+
 
 const AppRow = ({ list, className, children }) => {
   return (
@@ -191,6 +305,16 @@ const AppRow = ({ list, className, children }) => {
     </React.Fragment>
   )
 }
+
+const Mentor = ({ src, name, fileName, org, skillsets }) => (
+  <span className="mentor">
+    <a href={links[fileName]}>
+      <img src={src} />
+      <p>{name}</p>
+    </a>
+    <span>{org}<br/>{skillsets}</span>
+  </span>
+)
 
 const App = ({ src, name, fileName }) => (
   <a className="app" href={links[fileName]}>
@@ -275,10 +399,8 @@ export default class SuppportedContainer extends React.Component {
       <Supported innerRef={this.supported}>
         <div className="container">
           <h2>Mentors</h2>
-          <AppRow list={mentors}>
-          </AppRow>
-        </div>
-        <div className="container">
+          <MentorRow list={mentors}>
+          </MentorRow>
           <h2>Partners</h2>
           <AppRow list={partners}>
           </AppRow>
