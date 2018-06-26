@@ -6,6 +6,9 @@ import docs from './documentation.svg'
 import manage from './manage.svg'
 import register from './register.svg'
 import wallet from './wallet.svg'
+import infura from '../supportedApps/sponsors/infura.jpg'
+import aragon from '../supportedApps/sponsors/aragon.png'
+import status from '../supportedApps/sponsors/status.jpg'
 
 const GetStarted = styled('section')`
   padding: 100px 0 0;
@@ -58,19 +61,19 @@ export default () => (
     <div className="icons container">
       <div className="icon">
         <div className="img-wrapper">
-          <img src={'https://pbs.twimg.com/profile_images/940349100297297920/7aglaO4Q_400x400.jpg'} />
+          <img src={infura} />
         </div>
         <p>Infura</p>
       </div>
       <div className="icon">
         <div className="img-wrapper">
-          <img src={'https://wiki.aragon.one/design/logo/png/isotype.png'} />
+          <img src={aragon} />
         </div>
         <p>Aragon</p>
       </div>
       <div className="icon">
         <div className="img-wrapper">
-          <img src={'https://pbs.twimg.com/profile_images/966759182589308928/s5rZXoWk_400x400.jpg'} />
+          <img src={status} />
         </div>
         <p>Status.im</p>
       </div>
