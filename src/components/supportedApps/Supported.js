@@ -192,7 +192,7 @@ const mentor_details = {
   "jennaszenk": {
     "fullName":"Jenna Zenk",
     "org":"Melonport",
-    "skillsets":"#ens, #governance"
+    "skillsets":"#web3, #governance"
   },
   "bretsun": {
     "fullName":"Bret Sun",
@@ -202,11 +202,11 @@ const mentor_details = {
   "quynhtranthanh": {
     "fullName":"Quynh Tran",
     "org":"Crypto Compare",
-    "skillsets":"#coarching"
+    "skillsets":"#data"
   },
   "matthewgould": {
     "fullName":"Matthew Gould",
-    "org":"Agent",
+    "org":"BuyethDomains",
     "skillsets":"#ens"
   },
   "graemeblackwood": {
