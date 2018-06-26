@@ -344,7 +344,7 @@ export default class SuppportedContainer extends React.Component {
     let bodyHeight = document.body.clientHeight
     let supported = this.supported.current
     let supportedHeight = supported.offsetHeight
-    let roadmap = document.querySelector('.roadmap')
+    let roadmap = document.querySelector('.roadmap');
     let roadMapHeight = supported.offsetHeight
     let supportedTop = supported.offsetTop - bodyHeight
     let roadMapOffsetBottom = roadmap.offsetTop + roadMapHeight
@@ -387,11 +387,11 @@ export default class SuppportedContainer extends React.Component {
       true
     )
 
-    this.hexagon1.current.style.top = hexagon1Pos + 'px'
-    this.hexagon2.current.style.top = hexagon2Pos + '%'
-    this.circle1.current.style.top = circle1pos + '%'
-    this.circle2.current.style.top = circle2pos + '%'
-    this.hexagon3.current.style.top = hexagon3Pos + '%'
+    // this.hexagon1.current.style.top = hexagon1Pos + 'px'
+    // this.hexagon2.current.style.top = hexagon2Pos + '%'
+    // this.circle1.current.style.top = circle1pos + '%'
+    // this.circle2.current.style.top = circle2pos + '%'
+    // this.hexagon3.current.style.top = hexagon3Pos + '%'
   }
 
   render() {
@@ -406,9 +406,9 @@ export default class SuppportedContainer extends React.Component {
           </AppRow>
         </div>
         <div className="bg-images">
-          {bgImages.map(img => (
+          {/* {bgImages.map(img => (
             <img className={img.name} src={img.src} ref={this[img.name]} />
-          ))}
+          ))} */}
         </div>
       </Supported>
     )
