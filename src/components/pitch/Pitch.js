@@ -163,27 +163,11 @@ class Pitch extends React.Component {
     return (
       <PitchContainer>
         <p className="value-prop" ref={this.valueProp}>
-          ENS offers a secure &amp; decentralised way to address resources both
-          on and off the blockchain using simple,{' '}
-          <strong>human-readable names.</strong>
+          The second ENS workshop, on <strong>August 10th</strong>, will bring together experts from around the Ethereum community to discuss technical improvements and the way forward for the Ethereum Name Service. Topics will include dispute resolution, user experience, and design of the permanent registrar.
+          This will be followed on <strong>August 11th-12th</strong> by a two day ENS focused hackathon
           <div className="hexagon" ref={this.hexagon} />
           <div className="circle" ref={this.circle} />
         </p>
-        <Explainer />
-        <div className="card-container container">
-          <ValueCard title="Secure." img={secure}>
-            ENS operates in a distributed fashion for both its infrastructure
-            and governance. Anyone can register a .eth domain name for
-            themselves by participating in an auction process, mediated by the
-            blockchain.
-          </ValueCard>
-          <ValueCard title="Truly distributed." img={distributed}>
-            ENS operates in a distributed fashion for both its infrastructure
-            and governance. Anyone can register a .eth domain name for
-            themselves by participating in an auction process, mediated by the
-            blockchain.
-          </ValueCard>
-        </div>
       </PitchContainer>
     )
   }

@@ -54,31 +54,25 @@ const GetStarted = styled('section')`
 
 export default () => (
   <GetStarted>
-    <h2>Get Started using ENS</h2>
+    <h2>Sponsors</h2>
     <div className="icons container">
       <div className="icon">
         <div className="img-wrapper">
-          <img src={wallet} />
+          <img src={'https://pbs.twimg.com/profile_images/940349100297297920/7aglaO4Q_400x400.jpg'} />
         </div>
-        <p>Name your wallet instantly</p>
+        <p>Infura</p>
       </div>
       <div className="icon">
         <div className="img-wrapper">
-          <img src={register} />
+          <img src={'https://wiki.aragon.one/design/logo/png/isotype.png'} />
         </div>
-        <p>Register a .eth domain</p>
+        <p>Aragon</p>
       </div>
       <div className="icon">
         <div className="img-wrapper">
-          <img src={manage} />
+          <img src={'https://pbs.twimg.com/profile_images/966759182589308928/s5rZXoWk_400x400.jpg'} />
         </div>
-        <p>Manage your domains</p>
-      </div>
-      <div className="icon">
-        <div className="img-wrapper">
-          <img src={docs} />
-        </div>
-        <p>Read the documentation</p>
+        <p>Status.im</p>
       </div>
     </div>
   </GetStarted>

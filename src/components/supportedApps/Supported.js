@@ -159,6 +159,15 @@ const mobile = importAll(
 const desktop = importAll(
   require.context('./desktop', false, /\.(png|jpe?g|svg)$/)
 )
+
+const mentors = importAll(
+  require.context('./mentors', false, /\.(png|jpe?g|svg)$/)
+)
+
+const partners = importAll(
+  require.context('./partners', false, /\.(png|jpe?g|svg)$/)
+)
+
 const apps = importAll(require.context('./apps', false, /\.(png|jpe?g|svg)$/))
 
 const bgImages = importAll(
@@ -265,21 +274,13 @@ export default class SuppportedContainer extends React.Component {
     return (
       <Supported innerRef={this.supported}>
         <div className="container">
-          <h2>Apps Supporting ENS</h2>
-          <AppRow list={mobile} title="s">
-            <h3>
-              <img className="phone-icon" src={phoneIcon} />Mobile Wallet
-            </h3>
+          <h2>Mentors</h2>
+          <AppRow list={mentors}>
           </AppRow>
-          <AppRow list={desktop}>
-            <h3>
-              <img className="desktop-icon" src={desktopIcon} />Desktop Wallets
-            </h3>
-          </AppRow>
-          <AppRow list={apps}>
-            <h3>
-              <img className="apps-icon" src={appsIcon} />Apps
-            </h3>
+        </div>
+        <div className="container">
+          <h2>Partners</h2>
+          <AppRow list={partners}>
           </AppRow>
         </div>
         <div className="bg-images">
