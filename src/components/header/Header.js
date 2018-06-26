@@ -125,7 +125,7 @@ const HeroBG = styled('div')`
   background: url(${BG});
   background-size: cover;
   background-position: center center;
-  height: 100%;
+  height: 0%;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -163,6 +163,7 @@ class Header extends React.Component {
     this.social = React.createRef()
   }
   componentDidMount() {
+    this.handleScroll();
     window.addEventListener('scroll', this.handleScroll)
   }
 
@@ -170,7 +171,8 @@ class Header extends React.Component {
     window.removeEventListener('scroll', this.handleScroll)
   }
   handleScroll = () => {
-    let bodyHeight = document.body.clientHeight
+    // let bodyHeight = document.body.clientHeight
+    let bodyHeight = 0;
     let scrollRange1 = [0, bodyHeight]
     let scrollRange2 = [0, 200]
     const headerHeight = modulate(
@@ -215,12 +217,13 @@ class Header extends React.Component {
       true
     )
 
-    const smallLogoOpacity = modulate(
-      window.pageYOffset,
-      [bodyHeight - 100, bodyHeight],
-      [0, 1],
-      true
-    )
+    const smallLogoOpacity = 1;
+    // const smallLogoOpacity = modulate(
+    //   window.pageYOffset,
+    //   [bodyHeight - 100, bodyHeight],
+    //   [0, 1],
+    //   true
+    // )
 
     const stickyScale = modulate(
       window.pageYOffset,
@@ -230,9 +233,9 @@ class Header extends React.Component {
     )
 
     //this.header.current.style.height = headerHeight + 'px'
-    this.logo.current.style.width = logoWidth + '%'
-    this.logo.current.style.marginBottom = `-${logoMargin}px`
-    this.logo.current.style.opacity = logoOpacity
+    // this.logo.current.style.width = logoWidth + '%'
+    // this.logo.current.style.marginBottom = `-${logoMargin}px`
+    // this.logo.current.style.opacity = logoOpacity
 
     const stickyHeader = this.stickyHeader.current.style
     stickyHeader.background = `rgba(255,255,255, ${stickyOpacity})`
@@ -277,10 +280,6 @@ class Header extends React.Component {
           </div>
         </StickyHeader>
         <HeroBG innerRef={this.header}>
-          <a href="#" className="logo">
-            <img src={logo} className="ens-logo" ref={this.logo} />
-            {/* <div className="name-service">Name Service</div> */}
-          </a>
         </HeroBG>
       </React.Fragment>
     )
