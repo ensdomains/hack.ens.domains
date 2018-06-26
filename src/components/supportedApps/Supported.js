@@ -213,6 +213,11 @@ const mentor_details = {
     "fullName":"Graeme Blackwood",
     "org":"Agent",
     "skillsets":"#ux"
+  },
+  "martriay":{
+    "fullName":"Martín Triay",
+    "org":"Zeppelin",
+    "skillsets":"#security"
   }
 }
 
