@@ -163,6 +163,7 @@ class Pitch extends React.Component {
     return (
       <PitchContainer>
         <p className="value-prop" ref={this.valueProp}>
+          <h1>ENS workshop & Hackathon</h1>
           The second ENS workshop, on <strong>August 10th</strong>, will bring together experts from around the Ethereum community to discuss technical improvements and the way forward for the Ethereum Name Service. Topics will include dispute resolution, user experience, and design of the permanent registrar.
           This will be followed on <strong>August 11th-12th</strong> by a two day ENS focused hackathon
           <div className="hexagon" ref={this.hexagon} />
