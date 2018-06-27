@@ -222,7 +222,7 @@ const mentor_details = {
   "erictu":{
     "fullName":"Eric Tu",
     "org":"Infura",
-    "skillsets":"#infrastructure"
+    "skillsets":"#infrastructure #backend"
   },
   "bradenpezeshki":{
     "fullName":"Braden Pezeshki",
