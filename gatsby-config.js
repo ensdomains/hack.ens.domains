@@ -1,5 +1,4 @@
 module.exports = {
-  pathPrefix: `/hack.ens.domains`,
   siteMetadata: {
     title: 'Ethereum Name Service',
   },
