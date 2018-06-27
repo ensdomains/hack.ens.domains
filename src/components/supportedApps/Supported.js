@@ -233,6 +233,16 @@ const mentor_details = {
     "fullName":"Dean Eigenmann",
     "org":"ENS",
     "skillsets":"#ens #governance"
+  },
+  "jefflau":{
+    "fullName":"Jeff Lau",
+    "org":"ENS",
+    "skillsets":"#ens #js"
+  },
+  "beltran":{
+    "fullName":"Beltran Berrocal",
+    "org":"ENS",
+    "skillsets":"#ens #ux"
   }
 }
 
