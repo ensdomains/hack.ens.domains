@@ -185,7 +185,7 @@ const mentor_details = {
     "skillsets":"#ama"
   },
   "jarradhope": {
-    "fullName":"JARRAD HOPE",
+    "fullName":"Jarrad Hope",
     "org":"status.im",
     "skillsets":"#mobile"
   },
