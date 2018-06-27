@@ -192,12 +192,12 @@ const mentor_details = {
   "jennaszenk": {
     "fullName":"Jenna Zenk",
     "org":"Melonport",
-    "skillsets":"#web3, #governance"
+    "skillsets":"#web3 #governance"
   },
-  "bretsun": {
-    "fullName":"Bret Sun",
+  "brettsun": {
+    "fullName":"Brett Sun",
     "org":"Aragon",
-    "skillsets":"#ens, #governance"
+    "skillsets":"#ens #governance"
   },
   "quynhtranthanh": {
     "fullName":"Quynh Tran",
@@ -211,13 +211,28 @@ const mentor_details = {
   },
   "graemeblackwood": {
     "fullName":"Graeme Blackwood",
-    "org":"Agent",
+    "org":"Argent",
     "skillsets":"#ux"
   },
   "martriay":{
     "fullName":"Martín Triay",
     "org":"Zeppelin",
     "skillsets":"#security"
+  },
+  "erictu":{
+    "fullName":"Eric Tu",
+    "org":"Infura",
+    "skillsets":"#infrastructure"
+  },
+  "bradenpezeshki":{
+    "fullName":"Braden Pezeshki",
+    "org":"Browseth",
+    "skillsets":"#ens"
+  },
+  "deaneigenmann":{
+    "fullName":"Dean Eigenmann",
+    "org":"ENS",
+    "skillsets":"#ens #governance"
   }
 }
 
