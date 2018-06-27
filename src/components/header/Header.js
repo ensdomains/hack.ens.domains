@@ -14,7 +14,8 @@ import { modulate } from '../../utils'
 import mq from '../../mediaQuery'
 
 const StickyHeader = styled('header')`
-  position: fixed;
+  position:fixed;
+  top:0;
   background: rgba(255, 255, 255, 0);
   height: 48px;
   width: 100%;
