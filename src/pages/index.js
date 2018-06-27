@@ -16,7 +16,6 @@ const IndexPage = () => (
     />
     <GetStarted />
     <Supported />
-    <RoadMap />
     <GetInvolved />
   </Fragment>
 )

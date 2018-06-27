@@ -61,7 +61,7 @@ const Supported = styled('section')`
   }
   .apps {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin: 0 auto 50px;
     width: 100%;
     flex-wrap: wrap;
@@ -377,45 +377,45 @@ export default class SuppportedContainer extends React.Component {
     let roadmap = document.querySelector('.roadmap');
     let roadMapHeight = supported.offsetHeight
     let supportedTop = supported.offsetTop - bodyHeight
-    let roadMapOffsetBottom = roadmap.offsetTop + roadMapHeight
+    // let roadMapOffsetBottom = roadmap.offsetTop + roadMapHeight
 
-    let scrollRange1 = [supportedTop, roadMapOffsetBottom]
-    let scrollRange2 = [supportedTop + supportedHeight / 2, roadMapOffsetBottom]
+    // let scrollRange1 = [supportedTop, roadMapOffsetBottom]
+    // let scrollRange2 = [supportedTop + supportedHeight / 2, roadMapOffsetBottom]
 
-    const hexagon1Pos = modulate(
-      window.pageYOffset,
-      scrollRange1,
-      [-200, supportedHeight / 2],
-      true
-    )
+    // const hexagon1Pos = modulate(
+    //   window.pageYOffset,
+    //   scrollRange1,
+    //   [-200, supportedHeight / 2],
+    //   true
+    // )
 
-    const hexagon2Pos = modulate(
-      window.pageYOffset,
-      scrollRange2,
-      [80, 40],
-      true
-    )
+    // const hexagon2Pos = modulate(
+    //   window.pageYOffset,
+    //   scrollRange2,
+    //   [80, 40],
+    //   true
+    // )
 
-    const circle1pos = modulate(
-      window.pageYOffset,
-      scrollRange2,
-      [75, 100],
-      true
-    )
+    // const circle1pos = modulate(
+    //   window.pageYOffset,
+    //   scrollRange2,
+    //   [75, 100],
+    //   true
+    // )
 
-    const circle2pos = modulate(
-      window.pageYOffset,
-      scrollRange1,
-      [100, 140],
-      true
-    )
+    // const circle2pos = modulate(
+    //   window.pageYOffset,
+    //   scrollRange1,
+    //   [100, 140],
+    //   true
+    // )
 
-    const hexagon3Pos = modulate(
-      window.pageYOffset,
-      scrollRange1,
-      [150, 120],
-      true
-    )
+    // const hexagon3Pos = modulate(
+    //   window.pageYOffset,
+    //   scrollRange1,
+    //   [150, 120],
+    //   true
+    // )
 
     // this.hexagon1.current.style.top = hexagon1Pos + 'px'
     // this.hexagon2.current.style.top = hexagon2Pos + '%'
