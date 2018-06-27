@@ -40,14 +40,14 @@ class GetInvolved extends React.Component {
         <div className="container">
           <h2>Get involved.</h2>
           <p>
-            For more information about ENS, or to help us develop and expand it,
-            join our Gitter channel.
+            To register your interest, 
+            please fill in the form.
           </p>
           <a
-            href="https://gitter.im/ethereum/go-ethereum/name-registry"
+            href="https://goo.gl/forms/kG1DAUecdW14fJPS2"
             className="button"
           >
-            Join Now
+            Apply Now
           </a>
         </div>
       </GetInvolvedContainer>

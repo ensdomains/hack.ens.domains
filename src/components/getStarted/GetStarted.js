@@ -6,6 +6,9 @@ import docs from './documentation.svg'
 import manage from './manage.svg'
 import register from './register.svg'
 import wallet from './wallet.svg'
+import infura from '../supportedApps/sponsors/infura.jpg'
+import aragon from '../supportedApps/sponsors/aragon.png'
+import status from '../supportedApps/sponsors/status.jpg'
 
 const GetStarted = styled('section')`
   padding: 100px 0 0;
@@ -54,31 +57,25 @@ const GetStarted = styled('section')`
 
 export default () => (
   <GetStarted>
-    <h2>Get Started using ENS</h2>
+    <h2>Sponsors</h2>
     <div className="icons container">
       <div className="icon">
         <div className="img-wrapper">
-          <img src={wallet} />
+          <a href="https://www.infura.io"><img src={infura} /></a>
         </div>
-        <p>Name your wallet instantly</p>
+        <p>Infura</p>
       </div>
       <div className="icon">
         <div className="img-wrapper">
-          <img src={register} />
+          <a href="https://aragon.one"><img src={aragon} /></a>
         </div>
-        <p>Register a .eth domain</p>
+        <p>Aragon</p>
       </div>
       <div className="icon">
         <div className="img-wrapper">
-          <img src={manage} />
+          <a href="http://status.im"><img src={status} /></a>
         </div>
-        <p>Manage your domains</p>
-      </div>
-      <div className="icon">
-        <div className="img-wrapper">
-          <img src={docs} />
-        </div>
-        <p>Read the documentation</p>
+        <p>Status.im</p>
       </div>
     </div>
   </GetStarted>

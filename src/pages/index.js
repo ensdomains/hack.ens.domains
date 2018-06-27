@@ -11,8 +11,8 @@ const IndexPage = () => (
   <Fragment>
     <Pitch />
     <Quote
-      quote="Mathematics is the art of giving the same name to different things."
-      author="Henri Poincare"
+      quote="11-12th August, 2018"
+      author="Central London"
     />
     <GetStarted />
     <Supported />

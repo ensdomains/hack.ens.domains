@@ -100,6 +100,46 @@ const Supported = styled('section')`
     }
   }
 
+  .mentor {
+    text-align: center;
+    width: 50%;
+    margin:20px 0;
+    ${mq.medium`
+      width: 25%;
+    `};
+
+    a{
+      text-decoration: none;
+      &:hover {
+        cursor: pointer;
+        img {
+          box-shadow: 4px 10px 20px 0 rgba(136,149,169,0.75);
+        }
+        
+        p {
+          transition: 0.2s ease-in-out;
+          color: #5284FF;
+        }
+      }  
+    }
+    img {
+      transition: box-shadow 0.3s ease-in-out;
+      border-radius: 50%;
+      box-shadow: 4px 10px 20px 0 rgba(136,149,169,0.30);
+      width: 50%;
+      margin-bottom: 15px;
+    }
+    p {
+      color: #3252C8;
+      font-size: 16px;
+      font-weight: 400;
+      text-transform: capitalize;
+      ${mq.medium`
+        font-size: 20px;
+      `};
+    }
+  }
+
   .app {
     text-align: center;
     text-decoration: none;
@@ -138,6 +178,89 @@ const Supported = styled('section')`
     }
   }
 `
+const mentor_details = {
+  "nicksdjohnson": {
+    "fullName":"Nick Johnson",
+    "org":"ENS",
+    "skillsets":"#ama"
+  },
+  "jarradhope": {
+    "fullName":"JARRAD HOPE",
+    "org":"status.im",
+    "skillsets":"#mobile"
+  },
+  "jennaszenk": {
+    "fullName":"Jenna Zenk",
+    "org":"Melonport",
+    "skillsets":"#web3 #governance"
+  },
+  "brettsun": {
+    "fullName":"Brett Sun",
+    "org":"Aragon",
+    "skillsets":"#ens #governance"
+  },
+  "quynhtranthanh": {
+    "fullName":"Quynh Tran",
+    "org":"Crypto Compare",
+    "skillsets":"#data"
+  },
+  "matthewgould": {
+    "fullName":"Matthew Gould",
+    "org":"BuyethDomains",
+    "skillsets":"#ens"
+  },
+  "graemeblackwood": {
+    "fullName":"Graeme Blackwood",
+    "org":"Argent",
+    "skillsets":"#ux"
+  },
+  "martriay":{
+    "fullName":"Martín Triay",
+    "org":"Zeppelin",
+    "skillsets":"#security"
+  },
+  "erictu":{
+    "fullName":"Eric Tu",
+    "org":"Infura",
+    "skillsets":"#infrastructure"
+  },
+  "bradenpezeshki":{
+    "fullName":"Braden Pezeshki",
+    "org":"Browseth",
+    "skillsets":"#ens"
+  },
+  "deaneigenmann":{
+    "fullName":"Dean Eigenmann",
+    "org":"ENS",
+    "skillsets":"#ens #governance"
+  },
+  "jefflau":{
+    "fullName":"Jeff Lau",
+    "org":"ENS",
+    "skillsets":"#ens #js"
+  },
+  "beltran":{
+    "fullName":"Beltran Berrocal",
+    "org":"ENS",
+    "skillsets":"#ens #ux"
+  }
+}
+
+const importMentors = r =>
+  r.keys().map(item => {
+    let fileName = item.replace(/\.(png|jpe?g|svg)$/, '').replace('./', '');
+    let parsed = item
+      .replace(/\.(png|jpe?g|svg)$/, '')
+      .replace(/([A-Z])/g, ' $1')
+      .replace('./', '')
+
+    let obj = {
+      fileName: fileName,
+      name: parsed,
+      src: r(item),
+    }
+    return Object.assign(obj, mentor_details[parsed])
+  })
 
 const importAll = r =>
   r.keys().map(item => {
@@ -159,11 +282,41 @@ const mobile = importAll(
 const desktop = importAll(
   require.context('./desktop', false, /\.(png|jpe?g|svg)$/)
 )
+
+const mentors = importMentors(
+  require.context('./mentors', false, /\.(png|jpe?g|svg)$/)
+)
+
+const partners = importAll(
+  require.context('./partners', false, /\.(png|jpe?g|svg)$/)
+)
+
 const apps = importAll(require.context('./apps', false, /\.(png|jpe?g|svg)$/))
 
 const bgImages = importAll(
   require.context('./images', false, /\.(png|jpe?g|svg)$/)
 )
+
+const MentorRow = ({ list, className, children }) => {
+  return (
+    <React.Fragment>
+      {children}
+      <div className={`apps ${className ? className : ''}`}>
+        {list.map(item => (
+          <Mentor
+            key={item.name}
+            src={item.src}
+            name={item.fullName}
+            org={item.org}
+            skillsets={item.skillsets}
+            fileName={item.fileName}
+          />
+        ))}
+      </div>
+    </React.Fragment>
+  )
+}
+
 
 const AppRow = ({ list, className, children }) => {
   return (
@@ -182,6 +335,16 @@ const AppRow = ({ list, className, children }) => {
     </React.Fragment>
   )
 }
+
+const Mentor = ({ src, name, fileName, org, skillsets }) => (
+  <span className="mentor">
+    <a href={links[fileName]}>
+      <img src={src} />
+      <p>{name}</p>
+    </a>
+    <span>{org}<br/>{skillsets}</span>
+  </span>
+)
 
 const App = ({ src, name, fileName }) => (
   <a className="app" href={links[fileName]}>
@@ -211,7 +374,7 @@ export default class SuppportedContainer extends React.Component {
     let bodyHeight = document.body.clientHeight
     let supported = this.supported.current
     let supportedHeight = supported.offsetHeight
-    let roadmap = document.querySelector('.roadmap')
+    let roadmap = document.querySelector('.roadmap');
     let roadMapHeight = supported.offsetHeight
     let supportedTop = supported.offsetTop - bodyHeight
     let roadMapOffsetBottom = roadmap.offsetTop + roadMapHeight
@@ -254,38 +417,28 @@ export default class SuppportedContainer extends React.Component {
       true
     )
 
-    this.hexagon1.current.style.top = hexagon1Pos + 'px'
-    this.hexagon2.current.style.top = hexagon2Pos + '%'
-    this.circle1.current.style.top = circle1pos + '%'
-    this.circle2.current.style.top = circle2pos + '%'
-    this.hexagon3.current.style.top = hexagon3Pos + '%'
+    // this.hexagon1.current.style.top = hexagon1Pos + 'px'
+    // this.hexagon2.current.style.top = hexagon2Pos + '%'
+    // this.circle1.current.style.top = circle1pos + '%'
+    // this.circle2.current.style.top = circle2pos + '%'
+    // this.hexagon3.current.style.top = hexagon3Pos + '%'
   }
 
   render() {
     return (
       <Supported innerRef={this.supported}>
         <div className="container">
-          <h2>Apps Supporting ENS</h2>
-          <AppRow list={mobile} title="s">
-            <h3>
-              <img className="phone-icon" src={phoneIcon} />Mobile Wallet
-            </h3>
-          </AppRow>
-          <AppRow list={desktop}>
-            <h3>
-              <img className="desktop-icon" src={desktopIcon} />Desktop Wallets
-            </h3>
-          </AppRow>
-          <AppRow list={apps}>
-            <h3>
-              <img className="apps-icon" src={appsIcon} />Apps
-            </h3>
+          <h2>Mentors</h2>
+          <MentorRow list={mentors}>
+          </MentorRow>
+          <h2>Partners</h2>
+          <AppRow list={partners}>
           </AppRow>
         </div>
         <div className="bg-images">
-          {bgImages.map(img => (
+          {/* {bgImages.map(img => (
             <img className={img.name} src={img.src} ref={this[img.name]} />
-          ))}
+          ))} */}
         </div>
       </Supported>
     )
