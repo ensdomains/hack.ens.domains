@@ -61,19 +61,19 @@ export default () => (
     <div className="icons container">
       <div className="icon">
         <div className="img-wrapper">
-          <img src={infura} />
+          <a href="https://www.infura.io"><img src={infura} /></a>
         </div>
         <p>Infura</p>
       </div>
       <div className="icon">
         <div className="img-wrapper">
-          <img src={aragon} />
+          <a href="https://aragon.one"><img src={aragon} /></a>
         </div>
         <p>Aragon</p>
       </div>
       <div className="icon">
         <div className="img-wrapper">
-          <img src={status} />
+          <a href="http://status.im"><img src={status} /></a>
         </div>
         <p>Status.im</p>
       </div>
