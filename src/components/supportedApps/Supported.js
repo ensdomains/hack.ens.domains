@@ -217,7 +217,7 @@ const mentor_details = {
   "martriay":{
     "fullName":"Martín Triay",
     "org":"Zeppelin",
-    "skillsets":"#security"
+    "skillsets":"#security #upgradeability"
   },
   "erictu":{
     "fullName":"Eric Tu",
