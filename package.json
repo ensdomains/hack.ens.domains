@@ -28,7 +28,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy:test": "gatsby build && cd public && surge . --domain ensdomains.surge.sh",
     "deploy:test2": "gatsby build && cd public && surge . --domain ensdomains2.surge.sh",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
+    "deploy": "cp index.html public/index.html && gh-pages -d public"
   },
   "devDependencies": {
     "gh-pages": "^1.2.0",
